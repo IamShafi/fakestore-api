@@ -9,8 +9,10 @@ const Header = () => {
     <div>
       <div>header</div>
       <div onClick={ () =>{
-        setIsOpen(!isOpen)
-      }} >
+        setIsOpen(!isOpen) }
+      } 
+      className='cursor-pointer'
+       >
         <BsBag className='text-2xl'/>
       </div>
     </div>
