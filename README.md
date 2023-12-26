@@ -1,1 +1,1 @@
-# ecommerce-shop-starter
+# Fake Store API
