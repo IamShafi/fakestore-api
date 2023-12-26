@@ -40,7 +40,7 @@ const Product = ({product}) => {
             </button>
             {/* link to product */}
             <Link to={`/product/${id}`}>
-              <div className='flex justify-center items-center text-white w-12 h-12 bg-white text-primary drop-shadow-xl'>
+              <div className='flex justify-center items-center  w-12 h-12 bg-white text-primary drop-shadow-xl'>
                 <BsEyeFill className='text-3xl' />
               </div>
             </Link>

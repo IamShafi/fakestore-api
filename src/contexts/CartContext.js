@@ -33,12 +33,16 @@ const CartProvider = ({children}) => {
     const newCart = cart.filter((item)=> item.id !== id);
     setCart(newCart);
   }
-
-  console.log(cart);
+  const clearCart = ()=>{
+    setCart([])
+  }
+  
 
   return <CartContext.Provider value={{cart,
      addToCart,
-     removefromCart}}>{children}</CartContext.Provider>;
+     removefromCart,
+     clearCart
+     }}>{children}</CartContext.Provider>;
 }
  
 export default CartProvider;
