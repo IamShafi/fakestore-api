@@ -13,7 +13,7 @@ import { CartContext } from '../contexts/CartContext';
 const Sidebar = () => {
   // 
   const {isOpen, handleClose } = useContext(SidebarContext);
-  const {cart, clearCart} = useContext(CartContext)
+  const {cart, clearCart, total} = useContext(CartContext)
   return (
     <div className={`${isOpen ? 'right-0' : '-right-full'} w-full bg-white fixed top-0 h-full
     shadow-2xl md:w-[35vw] xl:max-w-[30vw]
@@ -27,13 +27,16 @@ const Sidebar = () => {
         </div>
       </div>
       {/* cart items */}
-      <div>{ cart.map((item) => <CartItem key={item.id} item={item} />) }</div>
+      <div
+      className='flex flex-col gap-y-2  overflow-y-auto
+      overflow-x-hidden border-b'
+      >{ cart.map((item) => <CartItem key={item.id} item={item} />) }</div>
       {/* sidebar bottom */}
-      <div>
-        <div className='bg-pink-200 flex w-full justify-between items-center'>
+      <div className=' flex flex-col gap-y-3 py-4 mt-4'>
+        <div className=' flex w-full justify-between items-center'>
           {/* total */}
-          <div>
-                <span>Total:</span> $100
+          <div className='uppercase font-semibold'>
+                <span className='mr-2'>Total:</span> ${parseFloat(total).toFixed(2)}
           </div>
           {/* clear cart icon */}
           <div 
